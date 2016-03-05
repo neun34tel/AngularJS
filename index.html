@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.js"></script>
-    <title>AngularJS</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.js"></script>
+        <script src="js/mainModule.js"></script>
+        <title>AngularJS</title>
+    </head>
+    <body ng-app="myApp" ng-controller="myController">
+        <div>
+            <h1>Enter data here, see result after horizontal line:</h1>
+            <p>Name:        <input type="text"   placeholder="First name" ng-model="firstName" ></p>
+            <p>First name:  <input type="text"   placeholder="Last name"  ng-model="lastName"  ></p>
+            <span>Quantity: <input type="number" placeholder="Quantity"  ng-model="quantity"  ></span>
+            <span>Costs:    <input type="number" placeholder="Price"     ng-model="price"     ></span>
 
-</body>
+            <hr>
+
+            <h1>Hello, {{ nameFormatted() }}</h1>
+            <p>You bought {{ quantityFormatted() }} item(s) with a total value of {{ sum() | currency : symbol : fractionSize }} US-Dollars.</p>
+        </div>
+    </body>
 </html>
