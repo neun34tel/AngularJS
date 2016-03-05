@@ -3,30 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.js"></script>
         <script src="js/mainModule.js"></script>
         <title>AngularJS</title>
     </head>
     <body ng-app="myApp" ng-controller="myController" class="container">
-        <div class="row testRun">
+        <div class="row">
             <div class="col-xs-12">
-                <div class="col-xs-12 col-md-6">
-                    <div class="col-xs-4">
-                        <p>First name:</p>
-                        <p>Last name:</p>
-                        <p>Quantity:</p>
-                        <p>Price:</p>
+                <div class="col-xs-12 col-md-6 input">
+                    <div class="col-xs-12 col-md-3 input_block">
+                        <label for="fistName">First name:</label>
+                        <input id="fistName" class="form-control" type="text" placeholder="First name" ng-model="firstName" required>
                     </div>
-                    <div class="col-xs-8">
-                        <input type="text"   placeholder="First name" ng-model="firstName" ><br>
-                        <input type="text"   placeholder="Last name"  ng-model="lastName"  ><br>
-                        <input type="number" placeholder="Quantity"   ng-model="quantity"  ><br>
-                        <input type="number" placeholder="Price"      ng-model="price"     >
+                    <div class="col-xs-12 col-md-3 input_block">
+                        <label for="lastName">Last name:</label>
+                        <input id="lastName" class="form-control" type="text" placeholder="Last name" ng-model="lastName" required>
+                    </div>
+                    <div class="col-xs-12 col-md-3 input_block">
+                        <label for="quantity">Quantity:</label>
+                        <input id="quantity" class="form-control" type="number" placeholder="Quantity" ng-model="quantity" required>
+                    </div>
+                    <div class="col-xs-12 col-md-3 input_block">
+                        <label for="price">Price:</label>
+                        <input id="price" class="form-control" type="number" placeholder="Price" ng-model="price" required>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-6 result">
                     <h1>Hello, {{ nameFormatted() }}</h1>
                     <p>You bought {{ quantityFormatted() }} item(s) with a total value of {{ sum() | currency : symbol : fractionSize }} US-Dollars.</p>
                 </div>

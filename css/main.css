@@ -1,6 +1,31 @@
 @charset "UTF-8";
 
-.testRun {
-  margin : 25px;
-  text-align : center;
+.angularPage {
+
+}
+
+.input,
+.result {
+  min-height : 200px;
+  padding : 25px;
+}
+
+.input {
+  border : 1px solid Black;
+}
+
+.input_block {
+  padding : 10px;
+}
+
+.result {
+  border : 1px solid Black;
+}
+
+.ng-valid {
+  background-color : Lime;
+}
+
+.ng-invalid {
+  background-color : red;
 }

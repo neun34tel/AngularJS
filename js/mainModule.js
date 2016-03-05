@@ -22,17 +22,21 @@ app.controller( "myController", function ( $scope ) {
     $scope.lastName = "Bamma";
 
     $scope.fullName = function () {
-        if ( $scope.firstName.length > 0 && $scope.lastName.length > 0 ) {
+        if ( $scope.firstName !== undefined && $scope.firstName.length > 0 &&
+             $scope.lastName !== undefined && $scope.lastName.length > 0 ) {
             return $scope.firstName + ' ' + $scope.lastName;
-        } else if ( $scope.firstName.length === 0 && $scope.lastName.length > 0 ) {
+        } else if ( ( $scope.firstName === undefined || $scope.firstName.length === 0 ) &&
+                    ( $scope.lastName !== undefined && $scope.lastName.length > 0 ) ) {
             return 'member of the ' + $scope.lastName + ' family';
-        } else {
+        } else if ( $scope.firstName !== undefined && $scope.firstName.length > 0 ) {
             return $scope.firstName;
+        } else {
+            return '';
         }
     };
 
     $scope.nameFormatted = function () {
-        if ( $scope.fullName().trim().length > 0) {
+        if ( $scope.fullName !== undefined && $scope.fullName().trim().length > 0) {
             return $scope.fullName().trim() + '!';
         } else {
             return 'stranger!';
